@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { HomeComponent } from './home/home.component';
 import { HomeGuard } from './guards/home.guard';
+import { DefaultComponent } from './home/default/default.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [HomeGuard],
     children: [
+      {
+        path: '',
+        component: DefaultComponent
+      },
       {
         path: 'crud-partner',
         loadChildren: () => loadRemoteModule({
