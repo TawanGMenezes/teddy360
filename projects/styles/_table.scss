@@ -1,0 +1,54 @@
+table {
+
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #6A6A6A;
+
+  thead,tfoot {
+    tr {
+      background: #eb6524 !important;
+      border-top-left-radius: 10px !important;
+    }
+    th{
+      font-weight: 700 !important;
+    }
+    td{
+    color: #FFF !important;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22.917px;
+    }
+  }
+
+  th {
+    color: #FFF !important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.917px;
+    text-align: center !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+  }
+
+  td {
+    color: #6A6A6A;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center !important;
+  }
+
+
+
+}
+
+.mat-mdc-table {
+  table-layout: fixed !important;
+  white-space: pre !important;
+}

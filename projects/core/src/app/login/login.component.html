@@ -1,0 +1,34 @@
+<div class="container-login">
+  <div class="right">
+    <img src="https://teddydigital.io/wp-content/uploads/2023/10/logo-branco-1024x497.png" alt="">
+  </div>
+  <div class="left">
+    <mat-card class="card-login">
+      <mat-card-content class="car-content">
+        <form class="form" [formGroup]="loginForm">
+          <h2>Acesse sua conta</h2>
+          <mat-form-field class="input-width">
+            <label for="login">Usuário</label>
+            <input type="text" matInput formControlName="login" mask="000.000.000-00">
+            <mat-error>
+              O campo usuário é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-width">
+            <label for="senha">Senha</label>
+            <input [type]="show ? 'text' :'password'" matInput formControlName="senha">
+            <mat-icon (click)="show = !show">{{show? 'visibility_off': 'visibility'}}</mat-icon>
+            <mat-error>
+              O campo senha é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+          <div class="complemento-login">
+            <mat-checkbox formControlName="manterconectado"S>Manter conectado</mat-checkbox>
+          </div>
+          <button class="btn-login" (click)="login()" mat-button [disabled]="!loginForm.valid">Entrar</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+

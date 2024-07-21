@@ -1,0 +1,90 @@
+<div *ngIf="type == 'delete'">
+  <h1 mat-dialog-title>{{titulo}}</h1>
+  <div mat-dialog-content>
+    {{subtitulo}}
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="false">{{cancelText}}</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>{{okText}}</button>
+  </div>
+</div>
+<div *ngIf="type == 'edit'">
+  <div class="container">
+    <div class="header-container justify-content-center">
+
+      <div class="header-title">
+        Edição de <span class="highlight">{{element.name}}</span>
+      </div>
+
+    </div>
+    <div class="form-container">
+
+      <form class="formgrid grid gap-2 justify-content-center	w-full" [formGroup]="partnerForm">
+        <div class=" col-5">
+          <mat-form-field class="input-width">
+            <label for="name">Nome</label>
+            <input type="text" matInput formControlName="name">
+            <mat-error>
+              O campo Nome é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-5">
+          <mat-form-field class="input-width">
+            <label for="description">Descrição</label>
+            <input type="text" matInput formControlName="description">
+            <mat-error>
+              O campo Descrição é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+         <div class=" col-5">
+          <mat-form-field class="input-width">
+            <label for="repositoryGit">Repositório</label>
+            <input type="text" matInput formControlName="repositoryGit">
+            <mat-error>
+              O campo Repositório é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-5">
+          <mat-form-field class="input-width">
+            <label for="urlDoc">Url do Documento</label>
+            <input type="text" matInput formControlName="urlDoc">
+            <mat-error>
+              O campo de Url é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+         <div class=" col-5">
+          <mat-form-field class="input-width">
+            <label for="repositoryGit">Clientes</label>
+            <mat-select formControlName="clients" multiple>
+              <mat-option *ngFor="let client of clients" [value]="client">{{client}}</mat-option>
+            </mat-select>
+            <mat-error>
+              O campo Repositório é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-5">
+          <mat-form-field class="input-width">
+            <label for="urlDoc">Projetos</label>
+            <mat-select formControlName="projects" multiple>
+              <mat-option *ngFor="let project of projects" [value]="project">{{project}}</mat-option>
+            </mat-select>
+            <mat-error>
+              O campo de Url é <strong>obrigatório</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </form>
+      <button class="btn" mat-raised-button (click)="handleRegister()">EDITAR</button>
+
+    </div>
+
+
+
+  </div>
+
+  </div>

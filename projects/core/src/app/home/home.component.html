@@ -1,0 +1,30 @@
+<div class="example-container">
+  <mat-toolbar class="example-toolbar">
+    <div class="header w-full">
+      <a routerLink="/home">
+        <img width="150" src="https://teddydigital.io/wp-content/uploads/2023/10/logo-branco.png" class="attachment-full size-full wp-image-14881" alt="" srcset="https://teddydigital.io/wp-content/uploads/2023/10/logo-branco.png 2281w, https://teddydigital.io/wp-content/uploads/2023/10/logo-branco-300x145.png 300w, https://teddydigital.io/wp-content/uploads/2023/10/logo-branco-1024x497.png 1024w, https://teddydigital.io/wp-content/uploads/2023/10/logo-branco-768x372.png 768w, https://teddydigital.io/wp-content/uploads/2023/10/logo-branco-1536x745.png 1536w, https://teddydigital.io/wp-content/uploads/2023/10/logo-branco-2048x993.png 2048w" sizes="(max-width: 2281px) 100vw, 2281px">
+      </a>
+      <div class="user">
+        <span>{{usuario}}</span>
+        <img src="../../assets/user.png" alt="" srcset="">
+      </div>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #sidenav mode="side" [opened]="true">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home/crud-partner">Cadastrar Parceiro</a>
+        <a mat-list-item routerLink="/home/crud-companies">Cadastrar Empresa externa</a>
+        <a mat-list-item routerLink="/home/list-p">Listar Parceiros</a>
+        <a mat-list-item routerLink="/home/list-c">Listar Empresas</a>
+        <a mat-list-item routerLink="/home/about-company">Sobre</a>
+        <a mat-list-item (click)="logout()">Sair</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+

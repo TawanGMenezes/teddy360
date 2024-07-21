@@ -1,0 +1,30 @@
+@import '../../styles';
+
+body,html{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+.mat-drawer-inner-container{
+  background-color: #525151 !important;
+  color: #fff !important;
+}
+
+mat-sidenav{
+ box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.6);
+}
+
+.mat-mdc-list-item-unscoped-content{
+  color: #fff !important;
+}
+
+.mat-mdc-list-item-unscoped-content:focus-visible{
+  color: #eb6524 !important;
+}
+
+

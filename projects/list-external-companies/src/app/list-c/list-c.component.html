@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="header-container">
+    <div class="separator"></div>
+    <div class="header-title">
+      Listagem de <span class="highlight">Empresas</span>
+    </div>
+    <div class="separator"></div>
+  </div>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+
+      <ng-container [matColumnDef]="colunm" *ngFor="let colunm of displayedColumns, let i = index">
+        <th mat-header-cell *matHeaderCellDef> {{colunm.toUpperCase()}} </th>
+        <td mat-cell *matCellDef="let element">
+          <ng-container *ngIf="colunm === 'createdAt'|| colunm === 'lastSubmit' ; else defaultCell">
+            {{element[colunm] | date: 'dd/MM/yyyy'}}
+          </ng-container>
+          <ng-template #defaultCell>
+            {{element[colunm]}}
+          </ng-template>
+           <div *ngIf="i == 6" class="btn-action">
+            <button mat-mini-fab class="edit" (click)="editPartner(element)">
+              <mat-icon>edit</mat-icon>
+             </button>
+            <button mat-mini-fab class="delete" (click)="deletePartner(element)">
+             <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          </td>
+
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   (page)="paginatorChanged($event)"
+                   >
+    </mat-paginator>
+  </div>
+</div>
+
+<!-- <p>list-p works!</p>
+{{page}} -->
