@@ -104,15 +104,17 @@ de Login caso o usuário não esteja logado.
 <!-- MODELO DE COMO EXECUTAR O PROJETO -->
 ## 🚀 Como executar o projeto
 
-1 - Baixar o Projeto <br>
-2 - Abrir a pasta do projeto no VsCode ou na IDE de sua preferência <br>
-3 - Abra o terminal e execute o comando (npm install) <br>
-4 - Rodar o projeto core (ng s core) <br>
-4 - Rodar o projeto partner (ng s partner) <br>
-4 - Rodar o projeto external-companies (ng s external-companies) <br>
-4 - Rodar o projeto list-partner (ng s list-partner) <br>
-4 - Rodar o projeto list-external-companies (ng s list-external-companies) <br>
-4 - Rodar o projeto about (ng s about) <br>
+1 - Baixar o Projeto. <br>
+2 - Abrir a pasta do projeto no VsCode ou na IDE de sua preferência. <br>
+3 - Abra o terminal e execute o comando (npm install). <br>
+4 - Rodar o projeto core (ng s core). <br>
+5 - Rodar o projeto partner (ng s partner). <br>
+6 - Rodar o projeto external-companies (ng s external-companies). <br>
+7 - Rodar o projeto list-partner (ng s list-partner). <br>
+8 - Rodar o projeto list-external-companies (ng s list-external-companies). <br>
+9 - Rodar o projeto about (ng s about). <br>
+10 - Abrir o projeto core na porta informada no navegador. <br>
+11 - Caso deseja acessar um MFE especifico, altere a porta na url.
 
 
 
