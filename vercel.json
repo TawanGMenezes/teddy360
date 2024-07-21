@@ -1,0 +1,30 @@
+{
+  "projects": [
+    {
+      "name": "core",
+      "root": "projects/core"
+    },
+    {
+      "name": "partner",
+      "root": "projects/partner"
+    },
+    {
+      "name": "external-companies",
+      "root": "projects/external-companies"
+    },
+    {
+      "name": "list-partner",
+      "root": "projects/list-partner"
+    },
+    {
+      "name": "list-external-companies",
+      "root": "projects/list-external-companies"
+    },
+    {
+      "name": "about",
+      "root": "projects/about"
+    }
+
+
+  ]
+}
