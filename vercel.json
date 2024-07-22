@@ -1,27 +1,27 @@
 {
   "rewrites": [
     {
-      "source": "/core/*",
+      "source": "projects/core/*",
       "destination": "/projects/core/dist"
     },
     {
-      "source": "/partner/*",
+      "source": "projects/partner/*",
       "destination": "/projects/partner/dist"
     },
     {
-      "source": "/external-companies/*",
+      "source": "projects/external-companies/*",
       "destination": "/projects/external-companies/dist"
     },
     {
-      "source": "/list-partner",
+      "source": "projects/list-partner",
       "destination": "/projects/list-partner/dist"
     },
     {
-      "source": "/list-external-companies",
+      "source": "projects/list-external-companies",
       "destination": "/projects/list-external-companies/dist"
     },
     {
-      "source": "/about",
+      "source": "projects/about",
       "destination": "/projects/about/dist"
     }
   ]
