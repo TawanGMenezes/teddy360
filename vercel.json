@@ -27,32 +27,7 @@
   ],
   "builds": [
     {
-      "src": "/projects/core",
-      "use": "@vercel/node",
-      "buildCommand": "npm install && ng build --prod"
-    },
-    {
-      "src": "/projects/partner",
-      "use": "@vercel/node",
-      "buildCommand": "npm install && ng build --prod"
-    },
-    {
-      "src": "/projects/external-companies",
-      "use": "@vercel/node",
-      "buildCommand": "npm install && ng build --prod"
-    },
-    {
-      "src": "/projects/list-partner",
-      "use": "@vercel/node",
-      "buildCommand": "npm install && ng build --prod"
-    },
-    {
-      "src": "/projects/list-external-companies",
-      "use": "@vercel/node",
-      "buildCommand": "npm install && ng build --prod"
-    },
-    {
-      "src": "/projects/about",
+      "src": ".",
       "use": "@vercel/node",
       "buildCommand": "npm install && ng build --prod"
     }
