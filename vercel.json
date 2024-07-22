@@ -1,28 +1,55 @@
 {
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/projects/core/*",
+      "src": "dist/core/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "dist/about/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "dist/partner/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "dist/list-partner/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "dist/external-companies/**/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "dist/list-external-companies/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/projects/core/*",
       "destination": "/projects/core/dist"
     },
     {
-      "source": "/projects/partner/*",
-      "destination": "/projects/partner/dist"
+      "src": "/projects/partner/*",
+      "dest": "/projects/partner/dist"
     },
     {
-      "source": "/projects/external-companies/*",
-      "destination": "/projects/external-companies/dist"
+      "src": "/projects/external-companies/*",
+      "dest": "/projects/external-companies/dist"
     },
     {
-      "source": "/projects/list-partner",
-      "destination": "/projects/list-partner/dist"
+      "src": "/projects/list-partner",
+      "dest": "/projects/list-partner/dist"
     },
     {
-      "source": "/projects/list-external-companies",
-      "destination": "/projects/list-external-companies/dist"
+      "src": "/projects/list-external-companies",
+      "dest": "/projects/list-external-companies/dist"
     },
     {
-      "source": "/projects/about",
-      "destination": "/projects/about/dist"
+      "src": "/projects/about",
+      "dest": "/projects/about/dist"
     }
   ]
 }
