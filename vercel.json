@@ -1,30 +1,60 @@
 {
-  "projects": [
+  "routes": [
     {
-      "name": "core",
-      "root": "projects/core"
+      "src": "/core/*",
+      "dest": "/projects/core/dist"
     },
     {
-      "name": "partner",
-      "root": "projects/partner"
+      "src": "/partner/*",
+      "dest": "/projects/partner/dist"
     },
     {
-      "name": "external-companies",
-      "root": "projects/external-companies"
+      "src": "/external-companies/*",
+      "dest": "/projects/external-companies/dist"
     },
     {
-      "name": "list-partner",
-      "root": "projects/list-partner"
+      "src": "/list-partner",
+      "dest": "/projects/list-partner/dist"
     },
     {
-      "name": "list-external-companies",
-      "root": "projects/list-external-companies"
+      "src": "/list-external-companies",
+      "dest": "/projects/list-external-companies/dist"
     },
     {
-      "name": "about",
-      "root": "projects/about"
+      "src": "/about",
+      "dest": "/projects/about/dist"
     }
-
-
+  ],
+  "builds": [
+    {
+      "src": "/projects/core",
+      "use": "@vercel/node",
+      "buildCommand": "npm install && ng build --prod"
+    },
+    {
+      "src": "/projects/partner",
+      "use": "@vercel/node",
+      "buildCommand": "npm install && ng build --prod"
+    },
+    {
+      "src": "/projects/external-companies",
+      "use": "@vercel/node",
+      "buildCommand": "npm install && ng build --prod"
+    },
+    {
+      "src": "/projects/list-partner",
+      "use": "@vercel/node",
+      "buildCommand": "npm install && ng build --prod"
+    },
+    {
+      "src": "/projects/list-external-companies",
+      "use": "@vercel/node",
+      "buildCommand": "npm install && ng build --prod"
+    },
+    {
+      "src": "/projects/about",
+      "use": "@vercel/node",
+      "buildCommand": "npm install && ng build --prod"
+    }
   ]
 }
