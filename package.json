@@ -13,7 +13,7 @@
     "build:external-companies": "ng build external-companies",
     "build:list-partner": "ng build list-partner",
     "build:list-external-companies": "ng build list-external-companies",
-    "build:about": "ng build about"
+    "build:about": "ng build about"
 
   },
   "private": true,
