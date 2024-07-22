@@ -29,7 +29,7 @@
   "routes": [
     {
       "src": "/projects/core/*",
-      "destination": "/projects/core/dist"
+      "dest": "/projects/core/dist"
     },
     {
       "src": "/projects/partner/*",
