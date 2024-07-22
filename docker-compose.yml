@@ -1,0 +1,49 @@
+services:
+
+  core:
+    build:
+        context: .
+        dockerfile: Dockerfile-core
+    ports:
+    - "4200:4200"
+    depends_on:
+      - partner
+      - list-partner
+      - external-companies
+      - list-external-companies
+      - about
+
+  about:
+    build:
+        context: .
+        dockerfile: Dockerfile-about
+    ports:
+    - "4205:4205"
+
+  external-companies:
+    build:
+        context: .
+        dockerfile: Dockerfile-external-companies
+    ports:
+    - "4202:4202"
+
+  list-external-companies:
+    build:
+        context: .
+        dockerfile: Dockerfile-list-external-companies
+    ports:
+    - "4204:4204"
+
+  list-partner:
+    build:
+        context: .
+        dockerfile: Dockerfile-list-partner
+    ports:
+    - "4203:4203"
+
+  partner:
+    build:
+        context: .
+        dockerfile: Dockerfile-partner
+    ports:
+    - "4201:4201"
