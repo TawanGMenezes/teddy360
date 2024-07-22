@@ -32,7 +32,8 @@
 						"styles": [
 							"projects/partner/src/styles.scss",
 							"@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/primeflex/primeflex.css"
+              "node_modules/primeflex/primeflex.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
 						],
 						"scripts": [],
 						"extraWebpackConfig": "projects/partner/webpack.config.js",
@@ -141,7 +142,9 @@
 						"styles": [
 							"projects/core/src/styles.scss",
 							"@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/primeflex/primeflex.css"
+              "node_modules/primeflex/primeflex.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
+
 
 						],
 						"scripts": [],
@@ -251,7 +254,8 @@
 						"styles": [
 							"projects/external-companies/src/styles.scss",
 							"@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/primeflex/primeflex.css"
+              "node_modules/primeflex/primeflex.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
 
 						],
 						"scripts": [],
@@ -361,7 +365,8 @@
 						"styles": [
 							"projects/list-partner/src/styles.scss",
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/primeflex/primeflex.css"
+              "node_modules/primeflex/primeflex.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
 
 						],
 						"scripts": [],
@@ -471,7 +476,8 @@
 						"styles": [
 							"projects/list-external-companies/src/styles.scss",
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/primeflex/primeflex.css"
+              "node_modules/primeflex/primeflex.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
 
 						],
 						"scripts": [],
@@ -581,7 +587,8 @@
 						"styles": [
 							"projects/about/src/styles.scss",
               "@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/primeflex/primeflex.css"
+              "node_modules/primeflex/primeflex.css",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css"
 
 						],
 						"scripts": [],

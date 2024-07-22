@@ -7,6 +7,7 @@ import { ExternalCompanyModel } from 'projects/models/external-companies.model';
 import { ModalComponent } from '../modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-list-c',
@@ -28,7 +29,8 @@ export class ListCComponent implements OnInit {
     private router : Router,
     private externalCompanyService: ExternalCompanyService,
     private dialog: MatDialog,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private spinner: NgxSpinnerService
 
   ) { }
 
@@ -43,7 +45,9 @@ export class ListCComponent implements OnInit {
   }
 
   getdata(){
+    this.spinner.show();
     this.externalCompanyService.listar().then((response) => {
+      this.spinner.hide();
       this.externalCompanies = response;
       this.paginator.pageSize = this.limit;
       this.paginator.length = response.length;

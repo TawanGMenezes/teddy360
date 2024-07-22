@@ -7,6 +7,7 @@ import { PartnerService } from '../services/partner.service';
 import {MatDialog} from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { NgxSpinnerService } from 'ngx-spinner';
 @Component({
   selector: 'app-list-p',
   templateUrl: './list-p.component.html',
@@ -28,7 +29,8 @@ export class ListPComponent implements OnInit {
     private router : Router,
     private partnerService: PartnerService,
     private dialog: MatDialog,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private spinner: NgxSpinnerService
 
   ) {
 
@@ -46,7 +48,9 @@ export class ListPComponent implements OnInit {
   }
 
   getdata(){
+    this.spinner.show();
     this.partnerService.listar().then((response) => {
+      this.spinner.hide();
       this.partners = response;
       this.paginator.pageSize = this.limit;
       this.paginator.length = response.length;
