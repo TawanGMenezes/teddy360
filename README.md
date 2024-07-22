@@ -52,6 +52,8 @@
 
 - styles (Pasta contendo todos os estilos globais separados por arquivos)
   
+- Dockerfile (Disponibilizado os arquivos para que possa subir em cloud)
+  
 
 <!-- ---------------------------------------------------------------------- -->
 
@@ -78,6 +80,7 @@ O sistema em si aborda um CRUD de Parceiros e Empresas Externas, com implementa�
 - [x] Redirecionamento para página específica das listagens através do link compartilhado, redirecionando para a página
 de Login caso o usuário não esteja logado.
 - [x] Após efetuar login, é redirecionado para a url colada no navegador, seja pela rota padrão ou por um link compartilhado.
+- [x] Caso o "materconectado" esteja marcado no login, salvar os dados nos cookies.
       
 
 ---
@@ -114,7 +117,8 @@ de Login caso o usuário não esteja logado.
 8 - Rodar o projeto list-external-companies (ng s list-external-companies). <br>
 9 - Rodar o projeto about (ng s about). <br>
 10 - Abrir o projeto core na porta informada no navegador. <br>
-11 - Caso deseja acessar um MFE especifico, altere a porta na url.
+11 - Caso deseja acessar um MFE especifico, altere a porta na url. <br>
+12 - Disponilizado o Dockerfile dos MFEs.
 
 
 
@@ -168,6 +172,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [x] Criar Layout MFE da listagem de empresas disponibilizando coluna de ações para cara linha da tabela onde irá conter o redirecionamento para as funções de edição e delete além de estilizar de acordo com a identidade visual proposta.
 - [x] Mudança no layout do modal para atender os 2 projetos no que se refere a edição e delete.
 - [x] Implementação do guard para verificação se o usuário esta logado e redirecionamento para a url desejada colado ao navegador e não seguindo a rota padrão.
+- [x] Configurar o Dockerfile de cada MFE para que possa subir em um cloud por exemplo.
       
 
 ---
@@ -180,7 +185,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 <!-- EXEMPLO DE FUNCIONALIDADES: -->
 - [x] Deixar todo o projeto compatível com mobile, alterando os layouts principalmente das tabelas para um componente dinâmico em que seja possível visualizar apenas as principais informações e o restante expansível em detalhes. [8hrs]
 - [x] Inclusão de novos MFEs, para novos assuntos como: Área de venda de produtos para parceiros cadastrados. [12hr]
-- [x] Implementação de um sistema de geolocalização onde o usuário encontraria o parceiro cadastrado mais próximo. [18hrs]    
+- [x] Implementação de um sistema de geolocalização onde o usuário encontraria o parceiro cadastrado mais próximo. [18hrs]
+      
 
 ---
 
