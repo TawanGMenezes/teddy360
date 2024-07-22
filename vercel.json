@@ -24,12 +24,5 @@
       "src": "/about",
       "dest": "/projects/about/dist"
     }
-  ],
-  "builds": [
-    {
-      "src": ".",
-      "use": "@vercel/node",
-      "buildCommand": "npm install && ng build --prod"
-    }
   ]
 }
