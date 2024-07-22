@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "rewrites": [
+    {
+      "source": "/core/*",
+      "destination": "/projects/core/dist"
+    },
+    {
+      "source": "/partner/*",
+      "destination": "/projects/partner/dist"
+    },
+    {
+      "source": "/external-companies/*",
+      "destination": "/projects/external-companies/dist"
+    },
+    {
+      "source": "/list-partner",
+      "destination": "/projects/list-partner/dist"
+    },
+    {
+      "source": "/list-external-companies",
+      "destination": "/projects/list-external-companies/dist"
+    },
+    {
+      "source": "/about",
+      "destination": "/projects/about/dist"
+    }
+  ]
+}
