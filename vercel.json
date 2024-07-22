@@ -24,5 +24,39 @@
       "src": "/about",
       "dest": "/projects/about/dist"
     }
-  ]
+  ],
+
+    "builds": [
+      {
+        "src": "core",
+        "use": "@vercel/node",
+        "buildCommand": "cd core && ng build --prod"
+      },
+      {
+        "src": "partner",
+        "use": "@vercel/node",
+        "buildCommand": "cd partner && ng build --prod"
+      },
+      {
+        "src": "external-companies",
+        "use": "@vercel/node",
+        "buildCommand": "cd external-companies && ng build --prod"
+      },
+      {
+        "src": "list-partner",
+        "use": "@vercel/node",
+        "buildCommand": "cd list-partner && ng build --prod"
+      },
+      {
+        "src": "list-external-companies",
+        "use": "@vercel/node",
+        "buildCommand": "cd list-external-companies && ng build --prod"
+      },
+      {
+        "src": "about",
+        "use": "@vercel/node",
+        "buildCommand": "cd about && ng build --prod"
+      }
+    ]
+
 }
