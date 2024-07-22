@@ -1,0 +1,13 @@
+FROM node:18
+WORKDIR /app
+COPY ./package.json /app
+COPY ./package-lock.json /app
+COPY ./projects/about/* /app
+COPY . /app
+RUN npm install
+RUN npm install -g @angular/cli
+CMD ["ng", "serve", "about", "--host", "0.0.0.0"]
+
+
+
+
