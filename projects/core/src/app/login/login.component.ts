@@ -12,6 +12,8 @@ import { CookieService } from 'ngx-cookie-service';
 export class LoginComponent implements OnInit {
 
   returnUrl: string = '';
+  page: string = '';
+  limit: string = '';
   show: boolean = false;
   loginForm: FormGroup = new FormGroup({
     login: new FormControl('', [Validators.required]),
@@ -21,8 +23,7 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private cookieService : CookieService, private route : ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    console.log(this.returnUrl)
+    this.getUrlpaste();
   }
 
   checkKeepConected() : boolean{
@@ -30,13 +31,24 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
     if (this.loginForm.valid) {
       !this.checkKeepConected() ? localStorage.setItem('login', this.loginForm.get('login')?.value) :
       this.cookieService.set('login', this.loginForm.get('login')?.value);
-      this.router.navigate(['home']);
-      // this.router.navigate([this.returnUrl]);
+
+      if (this.returnUrl === '/'){
+        this.router.navigate(['home']);
+      }else{
+        this.router.navigate([this.returnUrl]);
+      }
+
     }
   }
+
+  getUrlpaste(){
+    this.returnUrl = localStorage.getItem('savedUrl') || '/';
+  }
+
 
 
 }

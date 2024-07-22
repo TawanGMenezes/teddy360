@@ -14,17 +14,19 @@ export class HomeGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
+      let savedUrl = state.url.split('?')[0];
+      let params = state.url.split('?')[1];
+      if (savedUrl !== '/home'){
+        localStorage.setItem('savedUrl', savedUrl);
+      }
+      if (params){
+        localStorage.setItem('params', params);
+      }
       if (!localStorage.getItem('login') && !this.cookieService.get('login')){
-        console.log('usr not logged')
         this.router.navigate(['login']);
-        // this.router.navigate(['login'], { queryParams: { returnUrl: state.url } });
         return false;
       }
-
-
-      console.log('usr logged')
       return true;
-  }
+   }
 
 }

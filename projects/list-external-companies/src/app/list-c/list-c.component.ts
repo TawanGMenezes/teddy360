@@ -1,5 +1,5 @@
 import { ExternalCompanyService } from '../services/external-companies.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,6 +8,7 @@ import { ModalComponent } from '../modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-list-c',
@@ -17,8 +18,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class ListCComponent implements OnInit {
 
   page : number = 0;
-  limit! : number;
-
+  limit : number = 5;
+  params: string | null = '';
   externalCompanies! : ExternalCompanyModel[];
   dataSource = new MatTableDataSource<ExternalCompanyModel>();
   displayedColumns: string[] = ['ACTION'];
@@ -30,20 +31,40 @@ export class ListCComponent implements OnInit {
     private externalCompanyService: ExternalCompanyService,
     private dialog: MatDialog,
     private _snackBar: MatSnackBar,
-    private spinner: NgxSpinnerService
-
+    private spinner: NgxSpinnerService,
+    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
-    this.page = this.activatedRoute.snapshot.queryParams?.['page'] || 0;
-    this.limit = this.activatedRoute.snapshot.queryParams?.['limit'] || 5;
-    this.getdata()
+    this.params = localStorage.getItem('params');
+    if(this.params !== null){
+     this.checkParams();
+    }else{
+      this.page = this.activatedRoute.snapshot.queryParams?.['page'] || 0;
+      this.limit = this.activatedRoute.snapshot.queryParams?.['limit'] || 5;
+      this.getdata();
+    }
   }
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
   }
 
+  checkParams(){
+    const httpParams = new HttpParams({fromString: this.params!});
+    let paramsObject = {} as any;
+    httpParams.keys().forEach(key => {
+      paramsObject[key] = httpParams.get(key);
+    });
+    localStorage.removeItem('params');
+    localStorage.removeItem('savedUrl');
+    this.router.navigate(['/home/list-c'], {queryParams: paramsObject});
+    this.page = +paramsObject.page;
+    this.limit = +paramsObject.limit;
+    this.getdata();
+    this.cdr.detectChanges();
+
+  }
   getdata(){
     this.spinner.show();
     this.externalCompanyService.listar().then((response) => {
