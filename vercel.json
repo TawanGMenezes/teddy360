@@ -11,18 +11,6 @@
     {
       "src": "/external-companies/*",
       "dest": "/projects/external-companies/dist"
-    },
-    {
-      "src": "/list-partner",
-      "dest": "/projects/list-partner/dist"
-    },
-    {
-      "src": "/list-external-companies",
-      "dest": "/projects/list-external-companies/dist"
-    },
-    {
-      "src": "/about",
-      "dest": "/projects/about/dist"
     }
   ],
   "builds": [
