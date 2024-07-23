@@ -23,15 +23,6 @@
     }
   ],
   "environment": {
-    "API_URL": "https://tawangmenezes.vercel.app/api",
-    "REMOTE_URLS": {
-      "partner": "https://tawangmenezes.vercel.app/partner/remoteEntry.js",
-      "externalCompanies": "https://tawangmenezes.vercel.app/externalCompanies/remoteEntry.js",
-      "listPartner": "https://tawangmenezes.vercel.app/listPartner/remoteEntry.js",
-      "listExternalCompanies": "https://tawangmenezes.vercel.app/listExternalCompanies/remoteEntry.js",
-      "about": "https://tawangmenezes.vercel.app/about/remoteEntry.js"
-    }
+    "API_URL": "https://tawangmenezes.vercel.app/api"
   }
-
 }
-
